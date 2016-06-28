@@ -1,0 +1,25 @@
+"" indentation
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
+
+"" syntastic
+let g:syntastic_javascript_checkers = ['jshint', 'jscs']
+"" buffer navigation
+map <C-j> :bprev<Return>
+map <C-k> :bnext<Return>
+map <Leader>d :bd<Return>
+map <Leader>f :b
+
+"" vim-jsx
+let g:jsx_ext_required = 0
+
+"" Show the buffer number in the status line.
+set laststatus=2 statusline=%02n:%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+
+"" terminal colors
+let g:solarized_termcolors=256
+set t_Co=256 
+set background=dark
+colorscheme Tomorrow-Night-Eighties
