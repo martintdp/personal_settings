@@ -6,6 +6,7 @@ set tabstop=2
 
 "" syntastic
 let g:syntastic_javascript_checkers = ['jshint', 'jscs']
+set nospell
 "" buffer navigation
 map <C-j> :bprev<Return>
 map <C-k> :bnext<Return>
@@ -21,5 +22,44 @@ set laststatus=2 statusline=%02n:%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 "" terminal colors
 let g:solarized_termcolors=256
 set t_Co=256 
-set background=dark
-colorscheme Tomorrow-Night-Eighties
+colorscheme eva01
+
+"" shell
+set shell=zsh
+
+"" syntastic
+let syntastic_javascript_checkers= ['eslint']
+"" plugins
+Plugin 'mustache/vim-mustache-handlebars'
+
+
+""eslint settings
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exec = 'eslint_d'
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_loc_list_height = 5
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+
+let g:syntastic_error_symbol = '❌'
+let g:syntastic_style_error_symbol = '⁉️'
+let g:syntastic_warning_symbol = '⚠️'
+let g:syntastic_style_warning_symbol = '💩'
+
+highlight link SyntasticErrorSign SignColumn
+highlight link SyntasticWarningSign SignColumn
+highlight link SyntasticStyleErrorSign SignColumn
+highlight link SyntasticStyleWarningSign SignColumn
+
+""run gulp in terminal
+map <Leader>g :split<bar>:resize 5<bar>:term gulp<CR><ESC><C-w>k
+
+""Ggrep with ,g
+:nnoremap <Leader>F :Ggrep <C-R><C-W> *<CR>
+
+""exit terminal with ESC
+:tnoremap <Esc> <C-\><C-n>
