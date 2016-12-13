@@ -61,5 +61,3 @@ map <Leader>g :split<bar>:resize 5<bar>:term gulp<CR><ESC><C-w>k
 ""Ggrep with ,g
 :nnoremap <Leader>F :Ggrep <C-R><C-W> *<CR>
 
-""exit terminal with ESC
-:tnoremap <Esc> <C-\><C-n>
